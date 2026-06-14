@@ -1,0 +1,61 @@
+name: Bithumb API Rate Limits
+description: Bithumb applies rate limits to API endpoints to ensure platform stability and fair access for all users. Order-related endpoints have explicit per-second limits; public market data endpoints are more permissive.
+rateLimits:
+  - name: Order Create and Cancel Rate Limit
+    description: Maximum request frequency for placing and canceling orders via the REST API.
+    scope: Per API key
+    limit: 10
+    period: second
+    endpoints:
+      - POST /v1/orders
+      - DELETE /v1/orders/{uuid}
+      - POST /v1/orders/bulk
+      - DELETE /v1/orders/bulk
+      - POST /v1/orders/cancel
+    notes: Exceeding this limit will result in API error responses. The 10 requests/second limit applies to create and cancel order operations combined.
+  - name: Public Market Data Rate Limit
+    description: Rate limits for public (unauthenticated) endpoints providing market data.
+    scope: Per IP address
+    limit: Not explicitly published
+    period: second
+    endpoints:
+      - GET /v1/ticker
+      - GET /v1/orderbook
+      - GET /v1/trades
+      - GET /v1/candles/minutes/{unit}
+      - GET /v1/candles/hours
+      - GET /v1/candles/days
+      - GET /v1/candles/weeks
+      - GET /v1/candles/months
+      - GET /v1/market/all
+    notes: Public endpoints are rate-limited per IP. Specific limits are not published but are enforced to prevent abuse.
+  - name: Private API Rate Limit
+    description: Rate limits for authenticated private endpoints (excluding order creation/cancellation).
+    scope: Per API key
+    limit: Not explicitly published
+    period: second
+    endpoints:
+      - GET /v1/accounts
+      - GET /v1/orders
+      - GET /v1/orders/{uuid}
+      - GET /v1/withdraws
+      - GET /v1/deposits
+      - POST /v1/withdraws/coin
+      - POST /v1/withdraws/krw
+    notes: Private endpoints require JWT authentication. Rate limits are enforced but specific values are managed by Bithumb operations.
+  - name: WebSocket Connection Limit
+    description: Real-time WebSocket streaming API limits.
+    scope: Per connection
+    heartbeat: Ping every 30 seconds recommended
+    publicTopics:
+      - TICKER
+      - ORDERBOOK
+      - TRADE
+    privateTopics:
+      - ORDER (requires authentication)
+    notes: WebSocket connections should send heartbeat ping commands every 30 seconds. Version tracking via the ver field prevents message loss.
+sources:
+  - url: https://apidocs.bithumb.com/docs
+    description: Official Bithumb API documentation
+  - url: https://github.com/bithumb-pro/bithumb.pro-official-api-docs/blob/master/rest-api.md
+    description: Bithumb Pro REST API documentation on GitHub

@@ -1,0 +1,55 @@
+name: Bithumb API FinOps
+description: Financial operations considerations for teams and developers integrating with the Bithumb API. Bithumb does not charge for API access itself; costs arise from trading fees on executed orders and withdrawal fees for moving assets off the platform.
+costs:
+  - name: API Access
+    type: Free
+    amount: 0
+    currency: N/A
+    description: No charge for API access. All registered Bithumb account holders can use the full REST and WebSocket API suite at no additional cost.
+  - name: Spot Trading - Maker Fee
+    type: Per Transaction
+    amount: '0.04%'
+    currency: Percentage of trade value
+    description: Fee charged when a limit order adds liquidity to the order book and is not immediately filled (maker). Applies to all spot markets including KRW, BTC, and USDT pairs.
+  - name: Spot Trading - Taker Fee
+    type: Per Transaction
+    amount: '0.25%'
+    currency: Percentage of trade value
+    description: Fee charged when a market order or immediately-filled limit order removes liquidity from the order book (taker). Applies to all spot markets.
+  - name: KRW Withdrawal Fee
+    type: Per Withdrawal
+    amount: 1000
+    currency: KRW
+    description: Flat fee charged for each Korean Won (fiat) withdrawal from Bithumb to a linked bank account.
+  - name: Cryptocurrency Withdrawal Fee
+    type: Per Withdrawal
+    amount: Variable
+    currency: Native cryptocurrency
+    description: Network-based fee for withdrawing cryptocurrencies. Example - Bitcoin (BTC) withdrawal fee is 0.001 BTC. Fees vary by asset and network congestion.
+  - name: KRW Deposit Fee
+    type: Per Deposit
+    amount: 0
+    currency: KRW
+    description: No fee for depositing Korean Won (KRW) to Bithumb.
+  - name: Cryptocurrency Deposit Fee
+    type: Per Deposit
+    amount: 0
+    currency: N/A
+    description: No Bithumb-imposed fee for cryptocurrency deposits. Network gas fees may apply depending on the blockchain.
+discounts:
+  - name: Tiered Membership Discounts
+    description: Bithumb operates a six-tier membership system based on 30-day trading volume. Higher tiers receive incremental trading fee discounts of up to 0.02% off the standard rate.
+    tiers: 6
+    maxDiscount: '0.02%'
+    basis: 30-day trading volume
+costOptimizationTips:
+  - tip: Use limit orders instead of market orders to pay the maker fee (0.04%) rather than the taker fee (0.25%), reducing per-trade costs by over 6x.
+  - tip: Consolidate withdrawals to minimize per-withdrawal flat fees, especially for KRW withdrawals.
+  - tip: Monitor 30-day trading volume to qualify for higher membership tiers and reduced fee rates.
+  - tip: Batch orders using the bulk order endpoint (up to 20 orders per request) to reduce operational overhead at the same fee rates.
+  - tip: Use WebSocket streaming for real-time data instead of polling the REST API to reduce request volume and avoid rate limit issues.
+sources:
+  - url: https://apidocs.bithumb.com
+    description: Official Bithumb API documentation
+  - url: https://coinmarketfees.com/exchange/bithumb
+    description: Bithumb fee schedule reference

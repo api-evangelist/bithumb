@@ -1,0 +1,42 @@
+name: Bithumb API Plans
+description: Bithumb provides free API access to all registered users of the platform. There are no separate paid API tiers; access to the full REST and WebSocket API suite is included with a standard Bithumb account. Trading fees apply to executed orders.
+plans:
+  - name: Free API Access
+    description: All registered Bithumb users receive free access to both public and private REST API endpoints and the WebSocket streaming API. No separate API subscription is required.
+    url: https://apidocs.bithumb.com
+    access: free
+    authentication: JWT token for private endpoints; no authentication for public endpoints
+    features:
+      - Public market data endpoints (ticker, orderbook, trade history, candlesticks)
+      - Private order management (place, cancel, query orders)
+      - Bulk order placement (up to 20 orders per request)
+      - Bulk order cancellation (up to 30 orders per request)
+      - TWAP order support
+      - Account and asset management
+      - KRW and cryptocurrency deposit/withdrawal
+      - WebSocket real-time streams (ticker, orderbook, trades)
+      - Private WebSocket streams for personal order updates
+      - 396+ cryptocurrency trading pairs
+      - KRW, BTC, and USDT base markets
+    rateLimits:
+      - type: Orders
+        requests: 10
+        period: second
+        note: Create and cancel order endpoints
+    tradingFees:
+      - market: Spot (KRW, USDT, BTC)
+        maker: '0.04%'
+        taker: '0.25%'
+        note: Tiered membership discounts available (up to 0.02% reduction at highest tier)
+    withdrawalFees:
+      - asset: KRW
+        fee: 1000 KRW flat fee
+      - asset: BTC
+        fee: 0.001 BTC
+      - asset: Cryptocurrency (general)
+        fee: Variable based on network conditions
+    depositFees:
+      - asset: KRW
+        fee: Free
+      - asset: Cryptocurrency
+        fee: Free (excluding network gas fees)
