@@ -1,0 +1,35 @@
+{
+  "title": "Place Spot Order Example",
+  "description": "Example request and response for placing a limit buy order on Bithumb Global.",
+  "request": {
+    "method": "POST",
+    "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/placeOrder",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "apiKey": "your-api-key",
+      "symbol": "BTC-USDT",
+      "type": "limit",
+      "side": "buy",
+      "price": "30000",
+      "quantity": "0.001",
+      "timestamp": "1551346473238",
+      "msgNo": "order-client-id-001",
+      "signature": "computed-hmac-sha256-signature"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "orderId": "23132134242",
+        "symbol": "BTC-USDT"
+      },
+      "code": "0",
+      "msg": "success",
+      "timestamp": 1551346473238,
+      "params": []
+    }
+  }
+}

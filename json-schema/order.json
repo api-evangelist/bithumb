@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/bithumb/main/json-schema/order.json",
+  "title": "Bithumb Spot Order",
+  "description": "Schema for a Bithumb spot order object returned by order query endpoints.",
+  "type": "object",
+  "properties": {
+    "orderId": {
+      "type": "string",
+      "description": "Unique order identifier"
+    },
+    "symbol": {
+      "type": "string",
+      "description": "Trading pair symbol (e.g. BTC-USDT)"
+    },
+    "price": {
+      "type": "string",
+      "description": "Order price (limit orders)"
+    },
+    "tradedNum": {
+      "type": "string",
+      "description": "Quantity that has been filled"
+    },
+    "quantity": {
+      "type": "string",
+      "description": "Total order quantity"
+    },
+    "avgPrice": {
+      "type": "string",
+      "description": "Average fill price"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["send", "pending", "success", "cancel"],
+      "description": "Current order status"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["market", "limit"],
+      "description": "Order type"
+    },
+    "side": {
+      "type": "string",
+      "enum": ["buy", "sell"],
+      "description": "Order side"
+    },
+    "createTime": {
+      "type": "string",
+      "description": "Order creation time (Unix ms as string)"
+    },
+    "tradeTotal": {
+      "type": "string",
+      "description": "Total traded value"
+    }
+  },
+  "required": ["orderId", "symbol", "status", "type", "side"]
+}

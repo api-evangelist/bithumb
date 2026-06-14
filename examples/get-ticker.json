@@ -1,0 +1,27 @@
+{
+  "title": "Get Spot Ticker Example",
+  "description": "Example request and response for fetching the 24-hour ticker for BTC-USDT on Bithumb Global.",
+  "request": {
+    "method": "GET",
+    "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/ticker?symbol=BTC-USDT"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "c": "30000.00",
+          "h": "31500.00",
+          "l": "29500.00",
+          "p": "1.23",
+          "v": "123.45",
+          "s": "BTC-USDT"
+        }
+      ],
+      "success": true,
+      "msg": "",
+      "code": "0",
+      "params": []
+    }
+  }
+}

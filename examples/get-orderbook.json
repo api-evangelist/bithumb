@@ -1,0 +1,30 @@
+{
+  "title": "Get Order Book Example",
+  "description": "Example request and response for fetching the current order book for ETH-USDT on Bithumb Global.",
+  "request": {
+    "method": "GET",
+    "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/orderBook?symbol=ETH-USDT"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "b": [
+          ["1800.50", "2.5"],
+          ["1800.00", "5.0"]
+        ],
+        "s": [
+          ["1801.00", "1.2"],
+          ["1801.50", "3.0"],
+          ["1802.00", "0.8"]
+        ],
+        "ver": "42",
+        "symbol": "ETH-USDT"
+      },
+      "success": true,
+      "msg": "",
+      "code": "0",
+      "params": []
+    }
+  }
+}

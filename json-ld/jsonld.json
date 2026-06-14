@@ -1,0 +1,134 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "bithumb": "https://apidocs.bithumb.com/",
+    "dct": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@type": "WebAPI",
+  "@id": "https://global-openapi.bithumb.pro/openapi/v1",
+  "name": "Bithumb Global REST API",
+  "description": "REST API for Bithumb Global (bithumb.pro), South Korea's leading cryptocurrency exchange. Provides public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations.",
+  "url": "https://apidocs.bithumb.com",
+  "termsOfService": "https://www.bithumb.com/u1/US139",
+  "version": "1.0.0",
+  "provider": {
+    "@type": "Organization",
+    "name": "Bithumb",
+    "url": "https://www.bithumb.com",
+    "sameAs": "https://apidocs.bithumb.com"
+  },
+  "documentation": "https://apidocs.bithumb.com/docs",
+  "category": [
+    "Cryptocurrency Exchange",
+    "Spot Trading",
+    "Market Data",
+    "Financial Services"
+  ],
+  "potentialAction": [
+    {
+      "@type": "Action",
+      "name": "getServerTime",
+      "description": "Query the current server time",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://global-openapi.bithumb.pro/openapi/v1/serverTime"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "getSpotTicker",
+      "description": "Get 24-hour ticker data for spot markets",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://global-openapi.bithumb.pro/openapi/v1/spot/ticker{?symbol}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "getSpotOrderBook",
+      "description": "Get current order book for a spot trading pair",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://global-openapi.bithumb.pro/openapi/v1/spot/orderBook{?symbol}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "getSpotTrades",
+      "description": "Get recent trade records (last 100) for a symbol",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://global-openapi.bithumb.pro/openapi/v1/spot/trades{?symbol}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "getSpotKline",
+      "description": "Get candlestick (OHLCV) data for a symbol",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://global-openapi.bithumb.pro/openapi/v1/spot/kline{?symbol,type,start,end}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "placeSpotOrder",
+      "description": "Place a new spot order (authenticated)",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "POST",
+        "urlTemplate": "https://global-openapi.bithumb.pro/openapi/v1/spot/placeOrder"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "cancelSpotOrder",
+      "description": "Cancel an existing spot order (authenticated)",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "POST",
+        "urlTemplate": "https://global-openapi.bithumb.pro/openapi/v1/spot/cancelOrder"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "getSpotAssetList",
+      "description": "Query spot asset account balances (authenticated)",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "POST",
+        "urlTemplate": "https://global-openapi.bithumb.pro/openapi/v1/spot/assetList"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "submitWithdraw",
+      "description": "Submit a cryptocurrency withdrawal (authenticated)",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "POST",
+        "urlTemplate": "https://global-openapi.bithumb.pro/openapi/v1/withdraw"
+      }
+    }
+  ],
+  "availableChannel": [
+    {
+      "@type": "ServiceChannel",
+      "name": "REST API",
+      "serviceUrl": "https://global-openapi.bithumb.pro/openapi/v1",
+      "serviceType": "REST"
+    },
+    {
+      "@type": "ServiceChannel",
+      "name": "WebSocket",
+      "serviceUrl": "wss://pubwss.bithumb.com/pub/ws",
+      "serviceType": "WebSocket"
+    }
+  ]
+}

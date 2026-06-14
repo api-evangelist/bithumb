@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/bithumb/main/json-schema/ticker.json",
+  "title": "Bithumb Spot Ticker",
+  "description": "Schema for a single ticker entry returned by the /spot/ticker endpoint.",
+  "type": "object",
+  "properties": {
+    "c": {
+      "type": "string",
+      "description": "Last price in the past 24 hours"
+    },
+    "h": {
+      "type": "string",
+      "description": "High price in the past 24 hours"
+    },
+    "l": {
+      "type": "string",
+      "description": "Low price in the past 24 hours"
+    },
+    "p": {
+      "type": "string",
+      "description": "Price change percentage in the past 24 hours"
+    },
+    "v": {
+      "type": "string",
+      "description": "Volume (deal quantity) in the past 24 hours"
+    },
+    "s": {
+      "type": "string",
+      "description": "Trading pair symbol (e.g. BTC-USDT)"
+    }
+  },
+  "required": ["c", "h", "l", "p", "v", "s"]
+}
