@@ -1,6 +1,6 @@
 name: Bithumb
 description: Bithumb is South Korea's leading cryptocurrency exchange platform offering REST and WebSocket APIs for spot trading across KRW, BTC, and USDT markets. The APIs cover market data, order management, account management, deposit and withdrawal operations, and real-time streaming for 396+ cryptocurrencies.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -17,7 +17,7 @@ tags:
 apis:
   - name: Bithumb REST API
     description: REST API providing public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations on South Korea's leading cryptocurrency exchange.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://apidocs.bithumb.com
     baseURL: https://api.bithumb.com
     tags:
@@ -47,7 +47,7 @@ apis:
         email: ''
   - name: Bithumb WebSocket API
     description: Real-time WebSocket API for streaming market data including tickers, order books, and trade executions, as well as authenticated streams for personal order updates and account changes.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://apidocs.bithumb.com/docs
     baseURL: wss://pubwss.bithumb.com/pub/ws
     tags:
