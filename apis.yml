@@ -71,7 +71,7 @@ apis:
 common:
   - type: Website
     url: https://www.bithumb.com
-  - type: Developer Portal
+  - type: DeveloperPortal
     url: https://apidocs.bithumb.com
   - type: Documentation
     url: https://apidocs.bithumb.com/docs
