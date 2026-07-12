@@ -69,6 +69,10 @@ apis:
         url: https://apidocs.bithumb.com
         email: ''
 common:
+  - type: DomainSecurity
+    url: security/bithumb-domain-security.yml
+  - type: Authentication
+    url: authentication/bithumb-authentication.yml
   - type: Website
     url: https://www.bithumb.com
   - type: DeveloperPortal
@@ -83,6 +87,8 @@ common:
     url: https://apidocs.bithumb.com/docs/authentication
   - type: Support
     url: https://www.bithumb.com/u1/US139
+  - url: https://rss.blog.naver.com/bithumb_official.xml
+    type: Blog
 maintainers:
   - FN: API Evangelist
     url: https://apievangelist.com

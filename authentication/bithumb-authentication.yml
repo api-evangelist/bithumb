@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: query
+  parameter: apiKey
+  description: API key issued from bithumb.pro. All authenticated requests must also include
+    `timestamp` (Unix ms) and `signature` (HmacSHA256 of sorted request parameters joined with
+    "&").
+  sources:
+  - openapi/openapi.yml
