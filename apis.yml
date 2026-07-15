@@ -69,6 +69,8 @@ apis:
         url: https://apidocs.bithumb.com
         email: ''
 common:
+  - type: AgenticAccess
+    url: agentic-access/bithumb-agentic-access.yml
   - type: DomainSecurity
     url: security/bithumb-domain-security.yml
   - type: Authentication
