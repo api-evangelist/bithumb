@@ -1,0 +1,106 @@
+openapi: 3.0.3
+info:
+  title: Bithumb Global REST Account API
+  description: 'REST API for Bithumb Global (bithumb.pro), South Korea''s leading cryptocurrency exchange. Provides public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations across 396+ cryptocurrencies.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Bithumb Developer Support
+    url: https://apidocs.bithumb.com
+  termsOfService: https://www.bithumb.com/u1/US139
+servers:
+- url: https://global-openapi.bithumb.pro/openapi/v1
+  description: Bithumb Global REST API v1
+tags:
+- name: Account
+  description: Asset account management
+paths:
+  /spot/assetList:
+    post:
+      summary: Query spot asset account
+      description: Returns spot asset balances.
+      operationId: getSpotAssetList
+      tags:
+      - Account
+      security:
+      - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - assetType
+              properties:
+                coinType:
+                  type: string
+                  description: Filter by coin type. If omitted, returns all assets.
+                assetType:
+                  type: string
+                  description: spot for virtual assets
+                  example: spot
+                apiKey:
+                  type: string
+                timestamp:
+                  type: integer
+                  format: int64
+                signature:
+                  type: string
+      responses:
+        '200':
+          description: Asset list
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/BaseResponse'
+                - type: object
+                  properties:
+                    data:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/AssetRecord'
+components:
+  schemas:
+    BaseResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0'
+        msg:
+          type: string
+          example: success
+        timestamp:
+          type: integer
+          format: int64
+        params:
+          type: array
+          items: {}
+    AssetRecord:
+      type: object
+      properties:
+        coinType:
+          type: string
+        count:
+          type: string
+          description: Usable amount
+        frozen:
+          type: string
+          description: Frozen amount
+        btcQuantity:
+          type: string
+          description: Estimated BTC equivalent value
+        type:
+          type: string
+          description: 1=virtual coin, 2=legal currency
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: apiKey
+      description: 'API key issued from bithumb.pro. All authenticated requests must also include `timestamp` (Unix ms) and `signature` (HmacSHA256 of sorted request parameters joined with "&").
+
+        '

@@ -1,0 +1,244 @@
+openapi: 3.0.3
+info:
+  title: Bithumb Global REST Account Wallet API
+  description: 'REST API for Bithumb Global (bithumb.pro), South Korea''s leading cryptocurrency exchange. Provides public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations across 396+ cryptocurrencies.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Bithumb Developer Support
+    url: https://apidocs.bithumb.com
+  termsOfService: https://www.bithumb.com/u1/US139
+servers:
+- url: https://global-openapi.bithumb.pro/openapi/v1
+  description: Bithumb Global REST API v1
+tags:
+- name: Wallet
+  description: Deposit and withdrawal history
+paths:
+  /wallet/depositHistory:
+    post:
+      summary: Query deposit history
+      description: Returns deposit history for an account.
+      operationId: getDepositHistory
+      tags:
+      - Wallet
+      security:
+      - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - start
+              properties:
+                coin:
+                  type: string
+                  description: Coin type filter (e.g. BTC)
+                start:
+                  type: integer
+                  format: int64
+                  description: Query start time (Unix ms)
+                end:
+                  type: integer
+                  format: int64
+                  description: Query end time (Unix ms). Range must be <= 90 days.
+                limit:
+                  type: integer
+                  description: Max records (default 50, max 50)
+                apiKey:
+                  type: string
+                timestamp:
+                  type: integer
+                  format: int64
+                signature:
+                  type: string
+      responses:
+        '200':
+          description: Deposit history
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/BaseResponse'
+                - type: object
+                  properties:
+                    data:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/DepositRecord'
+  /wallet/withdrawHistory:
+    post:
+      summary: Query withdrawal history
+      description: Returns withdrawal history for an account.
+      operationId: getWithdrawHistory
+      tags:
+      - Wallet
+      security:
+      - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - start
+              properties:
+                coin:
+                  type: string
+                  description: Coin type filter (e.g. BTC)
+                start:
+                  type: integer
+                  format: int64
+                  description: Query start time (Unix ms)
+                end:
+                  type: integer
+                  format: int64
+                  description: Query end time (Unix ms). Range must be <= 90 days.
+                limit:
+                  type: integer
+                  description: Max records (default 50, max 50)
+                apiKey:
+                  type: string
+                timestamp:
+                  type: integer
+                  format: int64
+                signature:
+                  type: string
+      responses:
+        '200':
+          description: Withdrawal history
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/BaseResponse'
+                - type: object
+                  properties:
+                    data:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/WithdrawRecord'
+  /withdraw:
+    post:
+      summary: Submit a withdrawal
+      description: Initiates a cryptocurrency withdrawal. Requires withdrawal authentication.
+      operationId: submitWithdraw
+      tags:
+      - Wallet
+      security:
+      - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - coinType
+              - address
+              - quantity
+              - mark
+              properties:
+                coinType:
+                  type: string
+                  description: Coin type (e.g. BTC, USDT-ERC20, USDT-OMNI)
+                address:
+                  type: string
+                  description: Target wallet address
+                extendParam:
+                  type: string
+                  description: Memo or tag (for coins that require it)
+                quantity:
+                  type: string
+                  description: Withdrawal amount
+                mark:
+                  type: string
+                  description: Remark (max 250 chars)
+                apiKey:
+                  type: string
+                timestamp:
+                  type: integer
+                  format: int64
+                signature:
+                  type: string
+      responses:
+        '200':
+          description: Withdrawal submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BaseResponse'
+components:
+  schemas:
+    WithdrawRecord:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          description: 0-3=pending, 7=success, 8=fail
+        coinType:
+          type: string
+        quantity:
+          type: string
+        createTime:
+          type: integer
+          format: int64
+        address:
+          type: string
+        txid:
+          type: string
+        withdrawType:
+          type: string
+          description: 0=inner transfer, 1=wallet withdrawal
+        fee:
+          type: string
+    DepositRecord:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          description: 0=fail, 1=success
+        coinType:
+          type: string
+        quantity:
+          type: string
+        createTime:
+          type: integer
+          format: int64
+        address:
+          type: string
+        txid:
+          type: string
+        acountName:
+          type: string
+    BaseResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0'
+        msg:
+          type: string
+          example: success
+        timestamp:
+          type: integer
+          format: int64
+        params:
+          type: array
+          items: {}
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: apiKey
+      description: 'API key issued from bithumb.pro. All authenticated requests must also include `timestamp` (Unix ms) and `signature` (HmacSHA256 of sorted request parameters joined with "&").
+
+        '

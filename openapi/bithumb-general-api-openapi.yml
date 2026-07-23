@@ -1,0 +1,146 @@
+openapi: 3.0.3
+info:
+  title: Bithumb Global REST Account General API
+  description: 'REST API for Bithumb Global (bithumb.pro), South Korea''s leading cryptocurrency exchange. Provides public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations across 396+ cryptocurrencies.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Bithumb Developer Support
+    url: https://apidocs.bithumb.com
+  termsOfService: https://www.bithumb.com/u1/US139
+servers:
+- url: https://global-openapi.bithumb.pro/openapi/v1
+  description: Bithumb Global REST API v1
+tags:
+- name: General
+  description: Server time and configuration
+paths:
+  /serverTime:
+    get:
+      summary: Query server time
+      description: Returns the current server timestamp in milliseconds.
+      operationId: getServerTime
+      tags:
+      - General
+      responses:
+        '200':
+          description: Server timestamp
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/BaseResponse'
+                - type: object
+                  properties:
+                    data:
+                      type: integer
+                      format: int64
+                      example: 1557134972000
+  /spot/config:
+    get:
+      summary: Get exchange configuration
+      description: Returns spot, coin, and contract configuration details.
+      operationId: getSpotConfig
+      tags:
+      - General
+      responses:
+        '200':
+          description: Exchange configuration
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/BaseResponse'
+                - type: object
+                  properties:
+                    data:
+                      type: object
+                      properties:
+                        coinConfig:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/CoinConfig'
+                        spotConfig:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/SpotConfig'
+                        contractConfig:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/ContractConfig'
+components:
+  schemas:
+    ContractConfig:
+      type: object
+      properties:
+        symbol:
+          type: string
+        makerFeeRate:
+          type: string
+        takerFeeRate:
+          type: string
+    BaseResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0'
+        msg:
+          type: string
+          example: success
+        timestamp:
+          type: integer
+          format: int64
+        params:
+          type: array
+          items: {}
+    CoinConfig:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Coin symbol
+        fullName:
+          type: string
+          description: Full coin name
+        depositStatus:
+          type: string
+          description: 0=disabled, 1=enabled
+        withdrawStatus:
+          type: string
+          description: 0=disabled, 1=enabled
+        minWithdraw:
+          type: string
+        withdrawFee:
+          type: string
+        makerFeeRate:
+          type: string
+        takerFeeRate:
+          type: string
+        minTxAmt:
+          type: string
+    SpotConfig:
+      type: object
+      properties:
+        symbol:
+          type: string
+        accuracy:
+          type: array
+          items:
+            type: string
+        percentPrice:
+          type: object
+          properties:
+            multiplierDown:
+              type: string
+            multiplierUp:
+              type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: apiKey
+      description: 'API key issued from bithumb.pro. All authenticated requests must also include `timestamp` (Unix ms) and `signature` (HmacSHA256 of sorted request parameters joined with "&").
+
+        '

@@ -1,0 +1,276 @@
+openapi: 3.0.3
+info:
+  title: Bithumb Global REST Account Market Data API
+  description: 'REST API for Bithumb Global (bithumb.pro), South Korea''s leading cryptocurrency exchange. Provides public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations across 396+ cryptocurrencies.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Bithumb Developer Support
+    url: https://apidocs.bithumb.com
+  termsOfService: https://www.bithumb.com/u1/US139
+servers:
+- url: https://global-openapi.bithumb.pro/openapi/v1
+  description: Bithumb Global REST API v1
+tags:
+- name: Market Data
+  description: Public spot market data endpoints
+paths:
+  /spot/ticker:
+    get:
+      summary: Get spot ticker
+      description: Returns 24-hour ticker data for a symbol or all symbols.
+      operationId: getSpotTicker
+      tags:
+      - Market Data
+      parameters:
+      - name: symbol
+        in: query
+        required: true
+        description: Trading pair symbol (e.g. ETH-USDT). Use "ALL" to get all tickers.
+        schema:
+          type: string
+          example: BTC-USDT
+      responses:
+        '200':
+          description: Ticker data
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/BaseResponse'
+                - type: object
+                  properties:
+                    data:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/TickerData'
+  /spot/orderBook:
+    get:
+      summary: Get order book
+      description: Returns the current order book (bids and asks) for a symbol.
+      operationId: getSpotOrderBook
+      tags:
+      - Market Data
+      parameters:
+      - name: symbol
+        in: query
+        required: true
+        description: Trading pair symbol (e.g. ETH-USDT)
+        schema:
+          type: string
+          example: ETH-USDT
+      responses:
+        '200':
+          description: Order book
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/BaseResponse'
+                - type: object
+                  properties:
+                    data:
+                      $ref: '#/components/schemas/OrderBookData'
+  /spot/trades:
+    get:
+      summary: Get recent trades
+      description: Returns the last 100 trades for a symbol.
+      operationId: getSpotTrades
+      tags:
+      - Market Data
+      parameters:
+      - name: symbol
+        in: query
+        required: true
+        schema:
+          type: string
+          example: BTC-USDT
+      responses:
+        '200':
+          description: Recent trade records
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/BaseResponse'
+                - type: object
+                  properties:
+                    data:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/TradeRecord'
+  /spot/kline:
+    get:
+      summary: Get candlestick data
+      description: Returns OHLCV candlestick (kline) data for a symbol.
+      operationId: getSpotKline
+      tags:
+      - Market Data
+      parameters:
+      - name: symbol
+        in: query
+        required: true
+        schema:
+          type: string
+          example: BTC-USDT
+      - name: type
+        in: query
+        required: true
+        description: 'Kline interval: m1, m3, m5, m15, m30, h1, h2, h4, h6, h8, h12, d1, d3, w1, M1'
+        schema:
+          type: string
+          enum:
+          - m1
+          - m3
+          - m5
+          - m15
+          - m30
+          - h1
+          - h2
+          - h4
+          - h6
+          - h8
+          - h12
+          - d1
+          - d3
+          - w1
+          - M1
+      - name: start
+        in: query
+        required: true
+        description: Start time in Unix seconds
+        schema:
+          type: integer
+          format: int64
+      - name: end
+        in: query
+        required: true
+        description: End time in Unix seconds
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Kline data
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/BaseResponse'
+                - type: object
+                  properties:
+                    data:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/KlineRecord'
+components:
+  schemas:
+    OrderBookData:
+      type: object
+      properties:
+        b:
+          type: array
+          description: Bids [price, quantity]
+          items:
+            type: array
+            items:
+              type: string
+        s:
+          type: array
+          description: Asks [price, quantity]
+          items:
+            type: array
+            items:
+              type: string
+        ver:
+          type: string
+          description: Version number
+        symbol:
+          type: string
+    BaseResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0'
+        msg:
+          type: string
+          example: success
+        timestamp:
+          type: integer
+          format: int64
+        params:
+          type: array
+          items: {}
+    KlineRecord:
+      type: object
+      properties:
+        c:
+          type: string
+          description: Close price
+        h:
+          type: string
+          description: High price
+        l:
+          type: string
+          description: Low price
+        o:
+          type: string
+          description: Open price
+        s:
+          type: string
+          description: Total deal money
+        t:
+          type: string
+          description: Total deal times
+        time:
+          type: string
+          description: Timestamp (Unix seconds)
+        v:
+          type: string
+          description: Total deal quantity
+    TickerData:
+      type: object
+      properties:
+        c:
+          type: string
+          description: Last price in the past 24 hours
+        h:
+          type: string
+          description: High price in the past 24 hours
+        l:
+          type: string
+          description: Low price in the past 24 hours
+        p:
+          type: string
+          description: Price change in the past 24 hours
+        v:
+          type: string
+          description: Deal quantity in the past 24 hours
+        s:
+          type: string
+          description: Symbol
+    TradeRecord:
+      type: object
+      properties:
+        p:
+          type: string
+          description: Deal price
+        s:
+          type: string
+          description: Trade type (buy or sell)
+        v:
+          type: string
+          description: Deal quantity
+        t:
+          type: string
+          description: Timestamp (Unix seconds)
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: apiKey
+      description: 'API key issued from bithumb.pro. All authenticated requests must also include `timestamp` (Unix ms) and `signature` (HmacSHA256 of sorted request parameters joined with "&").
+
+        '
