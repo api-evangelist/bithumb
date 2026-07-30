@@ -1,6 +1,19 @@
 name: Bithumb
 description: Bithumb is South Korea's leading cryptocurrency exchange platform offering REST and WebSocket APIs for spot trading across KRW, BTC, and USDT markets. The APIs cover market data, order management, account management, deposit and withdrawal operations, and real-time streaming for 396+ cryptocurrencies.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/bithumb.png
 url: https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -15,59 +28,142 @@ tags:
   - Market Data
   - WebSocket
 apis:
-  - name: Bithumb REST API
-    description: REST API providing public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations on South Korea's leading cryptocurrency exchange.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://apidocs.bithumb.com
-    baseURL: https://api.bithumb.com
-    tags:
-      - Cryptocurrency
-      - Spot Trading
-      - Market Data
-      - Orders
-      - Account Management
-      - Deposits
-      - Withdrawals
-    properties:
-      - type: Documentation
-        url: https://apidocs.bithumb.com/docs
-      - type: OpenAPI
-        url: https://apidocs.bithumb.com/llms.txt
-      - type: TermsOfService
-        url: https://www.bithumb.com/u1/US139
-      - type: Plans
-        url: https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/plans/plans.yml
-      - type: RateLimits
-        url: https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/rate-limits/rate-limits.yml
-      - type: FinOps
-        url: https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/finops/finops.yml
-    contact:
-      - FN: Bithumb Developer Support
-        url: https://apidocs.bithumb.com
-        email: ''
-  - name: Bithumb WebSocket API
-    description: Real-time WebSocket API for streaming market data including tickers, order books, and trade executions, as well as authenticated streams for personal order updates and account changes.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://apidocs.bithumb.com/docs
-    baseURL: wss://pubwss.bithumb.com/pub/ws
-    tags:
-      - WebSocket
-      - Real-Time
-      - Market Data
-      - Order Book
-      - Ticker
-      - Trade Stream
-    properties:
-      - type: Documentation
-        url: https://apidocs.bithumb.com/docs
-      - type: Plans
-        url: https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/plans/plans.yml
-      - type: RateLimits
-        url: https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/rate-limits/rate-limits.yml
-    contact:
-      - FN: Bithumb Developer Support
-        url: https://apidocs.bithumb.com
-        email: ''
+- name: Bithumb WebSocket API
+  description: >-
+    Real-time WebSocket API for streaming market data including tickers, order books, and trade executions,
+    as well as authenticated streams for personal order updates and account changes.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://apidocs.bithumb.com/docs
+  baseURL: wss://pubwss.bithumb.com/pub/ws
+  tags:
+  - WebSocket
+  - Real-Time
+  - Market Data
+  - Order Book
+  - Ticker
+  - Trade Stream
+  properties:
+  - type: Documentation
+    url: https://apidocs.bithumb.com/docs
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/rate-limits/rate-limits.yml
+  contact:
+  - FN: Bithumb Developer Support
+    url: https://apidocs.bithumb.com
+    email: ''
+- aid: bithumb:bithumb-account-api
+  name: Bithumb Account API
+  description: Asset account management
+  humanURL: https://apidocs.bithumb.com
+  baseURL: https://api.bithumb.com
+  tags:
+  - Account
+  properties:
+  - type: OpenAPI
+    url: openapi/bithumb-account-api-openapi.yml
+  - type: Documentation
+    url: https://apidocs.bithumb.com/docs
+  - type: TermsOfService
+    url: https://www.bithumb.com/u1/US139
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/finops/finops.yml
+- aid: bithumb:bithumb-general-api
+  name: Bithumb General API
+  description: Server time and configuration
+  humanURL: https://apidocs.bithumb.com
+  baseURL: https://api.bithumb.com
+  tags:
+  - General
+  properties:
+  - type: OpenAPI
+    url: openapi/bithumb-general-api-openapi.yml
+  - type: Documentation
+    url: https://apidocs.bithumb.com/docs
+  - type: TermsOfService
+    url: https://www.bithumb.com/u1/US139
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/finops/finops.yml
+- aid: bithumb:bithumb-market-data-api
+  name: Bithumb Market Data API
+  description: Public spot market data endpoints
+  humanURL: https://apidocs.bithumb.com
+  baseURL: https://api.bithumb.com
+  tags:
+  - Market Data
+  properties:
+  - type: OpenAPI
+    url: openapi/bithumb-market-data-api-openapi.yml
+  - type: Documentation
+    url: https://apidocs.bithumb.com/docs
+  - type: TermsOfService
+    url: https://www.bithumb.com/u1/US139
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/finops/finops.yml
+- aid: bithumb:bithumb-spot-trading-api
+  name: Bithumb Spot Trading API
+  description: Authenticated spot order management
+  humanURL: https://apidocs.bithumb.com
+  baseURL: https://api.bithumb.com
+  tags:
+  - Spot Trading
+  properties:
+  - type: OpenAPI
+    url: openapi/bithumb-spot-trading-api-openapi.yml
+  - type: Documentation
+    url: https://apidocs.bithumb.com/docs
+  - type: TermsOfService
+    url: https://www.bithumb.com/u1/US139
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/finops/finops.yml
+- aid: bithumb:bithumb-wallet-api
+  name: Bithumb Wallet API
+  description: Deposit and withdrawal history
+  humanURL: https://apidocs.bithumb.com
+  baseURL: https://api.bithumb.com
+  tags:
+  - Wallet
+  properties:
+  - type: OpenAPI
+    url: openapi/bithumb-wallet-api-openapi.yml
+  - type: Documentation
+    url: https://apidocs.bithumb.com/docs
+  - type: TermsOfService
+    url: https://www.bithumb.com/u1/US139
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/finops/finops.yml
 common:
   - type: AgenticAccess
     url: agentic-access/bithumb-agentic-access.yml
