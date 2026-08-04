@@ -1,0 +1,22 @@
+{
+  "provider": "bithumb",
+  "sources": [
+    "bithumb-account-api-openapi.yml",
+    "bithumb-general-api-openapi.yml",
+    "bithumb-market-data-api-openapi.yml",
+    "bithumb-spot-trading-api-openapi.yml",
+    "bithumb-wallet-api-openapi.yml"
+  ],
+  "outputs": [
+    "bithumb-account-api-openapi.yml",
+    "bithumb-general-api-openapi.yml",
+    "bithumb-market-data-api-openapi.yml",
+    "bithumb-spot-trading-api-openapi.yml",
+    "bithumb-wallet-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
