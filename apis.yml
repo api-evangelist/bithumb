@@ -165,6 +165,8 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/bithumb/refs/heads/main/finops/finops.yml
 common:
+  - type: IssueTracker
+    url: https://github.com/bithumb-pro/bithumb.pro-official-api-docs/issues
   - type: AgenticAccess
     url: agentic-access/bithumb-agentic-access.yml
   - type: DomainSecurity
