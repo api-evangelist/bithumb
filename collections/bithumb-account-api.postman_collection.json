@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "44d36b21-a396-4753-b52f-c4c8f8e5777f",
+      "name": "Account",
+      "description": {
+        "content": "Asset account management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ee880acb-b3df-4f0b-a2b6-085e3b971843",
+          "name": "Query spot asset account",
+          "request": {
+            "name": "Query spot asset account",
+            "description": {
+              "content": "Returns spot asset balances.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "assetList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"assetType\": \"<string>\",\n  \"coinType\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f9e39924-b090-4bc5-8879-6e92fb8b67e5",
+              "name": "Asset list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "assetList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"assetType\": \"spot\",\n  \"coinType\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 5627,\n  \"data\": [\n    {\n      \"coinType\": \"string\",\n      \"count\": \"string\",\n      \"frozen\": \"string\",\n      \"btcQuantity\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"coinType\": \"string\",\n      \"count\": \"string\",\n      \"frozen\": \"string\",\n      \"btcQuantity\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://global-openapi.bithumb.pro/openapi/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5594000d-ce18-4cd5-bef6-da8f4c389cbb",
+    "name": "Bithumb Global REST Account API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Bithumb Global (bithumb.pro), South Korea's leading cryptocurrency exchange. Provides public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations across 396+ cryptocurrencies.\n\n\nContact Support:\n Name: Bithumb Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

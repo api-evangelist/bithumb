@@ -1,0 +1,207 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bithumb Global REST Account Spot Trading API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Spot Trading",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Place a spot order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/placeOrder",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apiKey",
+              "value": "{{apiKey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Creates a new spot order. Requires transaction authentication."
+        },
+        {
+          "info": {
+            "name": "Cancel a spot order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/cancelOrder",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apiKey",
+              "value": "{{apiKey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Cancels an existing spot order. Requires transaction authentication."
+        },
+        {
+          "info": {
+            "name": "Batch cancel spot orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/cancelOrder/batch",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apiKey",
+              "value": "{{apiKey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Cancels multiple spot orders. Requires transaction authentication."
+        },
+        {
+          "info": {
+            "name": "Batch place spot orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/placeOrders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apiKey",
+              "value": "{{apiKey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Places multiple spot orders (up to 10). Requires transaction authentication."
+        },
+        {
+          "info": {
+            "name": "Query single order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/singleOrder",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apiKey",
+              "value": "{{apiKey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Returns details of a specific order."
+        },
+        {
+          "info": {
+            "name": "Query open orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/openOrders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apiKey",
+              "value": "{{apiKey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Returns a paginated list of open orders for a symbol."
+        },
+        {
+          "info": {
+            "name": "Query order history",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/orderList",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apiKey",
+              "value": "{{apiKey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Returns a paginated list of historical (completed/cancelled) orders."
+        },
+        {
+          "info": {
+            "name": "Query order trade details",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/orderDetail",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apiKey",
+              "value": "{{apiKey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Returns trade-level fill details for an order."
+        },
+        {
+          "info": {
+            "name": "Query my trades",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/myTrades",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apiKey",
+              "value": "{{apiKey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Returns recent personal trade history for a symbol."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

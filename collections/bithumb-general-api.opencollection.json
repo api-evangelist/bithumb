@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bithumb Global REST Account General API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "General",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query server time",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/serverTime"
+          },
+          "docs": "Returns the current server timestamp in milliseconds."
+        },
+        {
+          "info": {
+            "name": "Get exchange configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/config"
+          },
+          "docs": "Returns spot, coin, and contract configuration details."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

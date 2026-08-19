@@ -1,0 +1,372 @@
+{
+  "item": [
+    {
+      "id": "b978021f-f445-4550-9e8f-de798f58c312",
+      "name": "Wallet",
+      "description": {
+        "content": "Deposit and withdrawal history",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c1e49d7a-0ce2-4a85-8b12-ed4b97d93259",
+          "name": "Query deposit history",
+          "request": {
+            "name": "Query deposit history",
+            "description": {
+              "content": "Returns deposit history for an account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wallet",
+                "depositHistory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"start\": \"<long>\",\n  \"coin\": \"<string>\",\n  \"end\": \"<long>\",\n  \"limit\": \"<integer>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4e668a4e-66cf-4a85-953d-1a8902c26f66",
+              "name": "Deposit history",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wallet",
+                    "depositHistory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"start\": \"<long>\",\n  \"coin\": \"<string>\",\n  \"end\": \"<long>\",\n  \"limit\": \"<integer>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 3241,\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"status\": \"string\",\n      \"coinType\": \"string\",\n      \"quantity\": \"string\",\n      \"createTime\": 3789,\n      \"address\": \"string\",\n      \"txid\": \"string\",\n      \"acountName\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"status\": \"string\",\n      \"coinType\": \"string\",\n      \"quantity\": \"string\",\n      \"createTime\": 6466,\n      \"address\": \"string\",\n      \"txid\": \"string\",\n      \"acountName\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a55cc057-35f7-4075-a54e-7594dbe158dd",
+          "name": "Query withdrawal history",
+          "request": {
+            "name": "Query withdrawal history",
+            "description": {
+              "content": "Returns withdrawal history for an account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wallet",
+                "withdrawHistory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"start\": \"<long>\",\n  \"coin\": \"<string>\",\n  \"end\": \"<long>\",\n  \"limit\": \"<integer>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7fceed71-5a1e-4e6e-9c79-be10f9faf59f",
+              "name": "Withdrawal history",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wallet",
+                    "withdrawHistory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"start\": \"<long>\",\n  \"coin\": \"<string>\",\n  \"end\": \"<long>\",\n  \"limit\": \"<integer>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 8883,\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"status\": \"string\",\n      \"coinType\": \"string\",\n      \"quantity\": \"string\",\n      \"createTime\": 9656,\n      \"address\": \"string\",\n      \"txid\": \"string\",\n      \"withdrawType\": \"string\",\n      \"fee\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"status\": \"string\",\n      \"coinType\": \"string\",\n      \"quantity\": \"string\",\n      \"createTime\": 7938,\n      \"address\": \"string\",\n      \"txid\": \"string\",\n      \"withdrawType\": \"string\",\n      \"fee\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "62f2082e-7b5c-4228-96ad-e66455c5b55a",
+          "name": "Submit a withdrawal",
+          "request": {
+            "name": "Submit a withdrawal",
+            "description": {
+              "content": "Initiates a cryptocurrency withdrawal. Requires withdrawal authentication.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "withdraw"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"coinType\": \"<string>\",\n  \"address\": \"<string>\",\n  \"quantity\": \"<string>\",\n  \"mark\": \"<string>\",\n  \"extendParam\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b6031fc1-8d6b-426e-8072-a2d2f285a8d6",
+              "name": "Withdrawal submitted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "withdraw"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"coinType\": \"<string>\",\n  \"address\": \"<string>\",\n  \"quantity\": \"<string>\",\n  \"mark\": \"<string>\",\n  \"extendParam\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 1227\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://global-openapi.bithumb.pro/openapi/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "add39ab4-46a8-4b84-898c-db8ad1227e99",
+    "name": "Bithumb Global REST Account Wallet API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Bithumb Global (bithumb.pro), South Korea's leading cryptocurrency exchange. Provides public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations across 396+ cryptocurrencies.\n\n\nContact Support:\n Name: Bithumb Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

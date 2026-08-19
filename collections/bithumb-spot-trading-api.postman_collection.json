@@ -1,0 +1,1060 @@
+{
+  "item": [
+    {
+      "id": "3bb10d4a-2e50-4959-9cda-02a9895060dc",
+      "name": "Spot Trading",
+      "description": {
+        "content": "Authenticated spot order management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f14ec57c-6bed-4adb-a340-dfe6b1338268",
+          "name": "Place a spot order",
+          "request": {
+            "name": "Place a spot order",
+            "description": {
+              "content": "Creates a new spot order. Requires transaction authentication.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "placeOrder"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"symbol\": \"<string>\",\n  \"type\": \"<string>\",\n  \"side\": \"<string>\",\n  \"price\": \"<string>\",\n  \"quantity\": \"<string>\",\n  \"timestamp\": \"<string>\",\n  \"msgNo\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"signature\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "188eb6be-8f0e-4b3b-a64d-7d21da37e45b",
+              "name": "Order placed successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "placeOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"symbol\": \"BTC-USDT\",\n  \"type\": \"<string>\",\n  \"side\": \"<string>\",\n  \"price\": \"<string>\",\n  \"quantity\": \"<string>\",\n  \"timestamp\": \"<string>\",\n  \"msgNo\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"signature\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 193,\n  \"data\": {\n    \"orderId\": \"string\",\n    \"symbol\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a25ad560-1ac5-4240-a9ad-6ebd8303c0d3",
+          "name": "Cancel a spot order",
+          "request": {
+            "name": "Cancel a spot order",
+            "description": {
+              "content": "Cancels an existing spot order. Requires transaction authentication.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "cancelOrder"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": \"<string>\",\n  \"symbol\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3e198b7d-c288-44e5-acbc-539725bbc603",
+              "name": "Order cancelled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "cancelOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"orderId\": \"<string>\",\n  \"symbol\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 8517\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36a1dd6f-9d8d-4c2c-a6af-b08b3b964bbb",
+          "name": "Batch cancel spot orders",
+          "request": {
+            "name": "Batch cancel spot orders",
+            "description": {
+              "content": "Cancels multiple spot orders. Requires transaction authentication.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "cancelOrder",
+                "batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"symbol\": \"<string>\",\n  \"ids\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "79cf3aca-b76d-45a6-be10-e5ee552e553d",
+              "name": "Orders cancelled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "cancelOrder",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"symbol\": \"ETH-USDT\",\n  \"ids\": \"74740189190115328,74740189190115329\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 8517\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "99f256e6-c4f5-46dd-b3f8-feac371f0935",
+          "name": "Batch place spot orders",
+          "request": {
+            "name": "Batch place spot orders",
+            "description": {
+              "content": "Places multiple spot orders (up to 10). Requires transaction authentication.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "placeOrders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"multiParams\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8c66b137-3cac-4448-864c-fac0720731e9",
+              "name": "Orders placed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "placeOrders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"multiParams\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 8857,\n  \"data\": [\n    {\n      \"data\": {\n        \"orderId\": \"string\",\n        \"symbol\": \"string\"\n      },\n      \"code\": \"string\",\n      \"msg\": \"string\",\n      \"timestamp\": 1072\n    },\n    {\n      \"data\": {\n        \"orderId\": \"string\",\n        \"symbol\": \"string\"\n      },\n      \"code\": \"string\",\n      \"msg\": \"string\",\n      \"timestamp\": 7256\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "861e3231-700c-46b1-8021-91a1997b3e2e",
+          "name": "Query single order",
+          "request": {
+            "name": "Query single order",
+            "description": {
+              "content": "Returns details of a specific order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "singleOrder"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": \"<string>\",\n  \"symbol\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d2c8ea09-1e02-4711-821b-9056deda9e16",
+              "name": "Order details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "singleOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"orderId\": \"<string>\",\n  \"symbol\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 3753,\n  \"data\": {\n    \"orderId\": \"string\",\n    \"symbol\": \"string\",\n    \"price\": \"string\",\n    \"tradedNum\": \"string\",\n    \"quantity\": \"string\",\n    \"avgPrice\": \"string\",\n    \"status\": \"pending\",\n    \"type\": \"market\",\n    \"side\": \"sell\",\n    \"createTime\": \"string\",\n    \"tradeTotal\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "facec79f-b24b-418e-82d1-5be7564cf8b0",
+          "name": "Query open orders",
+          "request": {
+            "name": "Query open orders",
+            "description": {
+              "content": "Returns a paginated list of open orders for a symbol.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "openOrders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"symbol\": \"<string>\",\n  \"page\": \"<string>\",\n  \"count\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "03d85435-9a0d-4dc9-8b26-502098f6c970",
+              "name": "Open order list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "openOrders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"symbol\": \"<string>\",\n  \"page\": \"<string>\",\n  \"count\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 6568,\n  \"data\": {\n    \"num\": 8334,\n    \"list\": [\n      {\n        \"orderId\": \"string\",\n        \"symbol\": \"string\",\n        \"price\": \"string\",\n        \"tradedNum\": \"string\",\n        \"quantity\": \"string\",\n        \"avgPrice\": \"string\",\n        \"status\": \"cancel\",\n        \"type\": \"limit\",\n        \"side\": \"buy\",\n        \"createTime\": \"string\",\n        \"tradeTotal\": \"string\"\n      },\n      {\n        \"orderId\": \"string\",\n        \"symbol\": \"string\",\n        \"price\": \"string\",\n        \"tradedNum\": \"string\",\n        \"quantity\": \"string\",\n        \"avgPrice\": \"string\",\n        \"status\": \"cancel\",\n        \"type\": \"limit\",\n        \"side\": \"buy\",\n        \"createTime\": \"string\",\n        \"tradeTotal\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53bf9aaa-f247-4755-b6c6-97759ebce40b",
+          "name": "Query order history",
+          "request": {
+            "name": "Query order history",
+            "description": {
+              "content": "Returns a paginated list of historical (completed/cancelled) orders.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "orderList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"side\": \"<string>\",\n  \"symbol\": \"<string>\",\n  \"status\": \"<string>\",\n  \"queryRange\": \"<string>\",\n  \"page\": \"<string>\",\n  \"count\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "932f86cc-2470-4ecc-9491-7753c56b90c5",
+              "name": "Order history",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "orderList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"side\": \"<string>\",\n  \"symbol\": \"<string>\",\n  \"status\": \"<string>\",\n  \"queryRange\": \"<string>\",\n  \"page\": \"<string>\",\n  \"count\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 6568,\n  \"data\": {\n    \"num\": 8334,\n    \"list\": [\n      {\n        \"orderId\": \"string\",\n        \"symbol\": \"string\",\n        \"price\": \"string\",\n        \"tradedNum\": \"string\",\n        \"quantity\": \"string\",\n        \"avgPrice\": \"string\",\n        \"status\": \"cancel\",\n        \"type\": \"limit\",\n        \"side\": \"buy\",\n        \"createTime\": \"string\",\n        \"tradeTotal\": \"string\"\n      },\n      {\n        \"orderId\": \"string\",\n        \"symbol\": \"string\",\n        \"price\": \"string\",\n        \"tradedNum\": \"string\",\n        \"quantity\": \"string\",\n        \"avgPrice\": \"string\",\n        \"status\": \"cancel\",\n        \"type\": \"limit\",\n        \"side\": \"buy\",\n        \"createTime\": \"string\",\n        \"tradeTotal\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1fc2ab5b-3ae7-495e-baee-0aed2c322891",
+          "name": "Query order trade details",
+          "request": {
+            "name": "Query order trade details",
+            "description": {
+              "content": "Returns trade-level fill details for an order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "orderDetail"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": \"<string>\",\n  \"symbol\": \"<string>\",\n  \"page\": \"<string>\",\n  \"count\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "88af5564-77be-4eb4-bd38-731391cb1960",
+              "name": "Order fill details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "orderDetail"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"orderId\": \"<string>\",\n  \"symbol\": \"<string>\",\n  \"page\": \"<string>\",\n  \"count\": \"<string>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 3340,\n  \"data\": {\n    \"num\": 5547,\n    \"list\": [\n      {\n        \"orderId\": \"string\",\n        \"orderSign\": \"string\",\n        \"getCount\": \"string\",\n        \"getCountUnit\": \"string\",\n        \"loseCount\": \"string\",\n        \"loseCountUnit\": \"string\",\n        \"price\": \"string\",\n        \"priceUnit\": \"string\",\n        \"fee\": \"string\",\n        \"feeUnit\": \"string\",\n        \"time\": 859,\n        \"fsymbol\": \"string\",\n        \"side\": \"sell\"\n      },\n      {\n        \"orderId\": \"string\",\n        \"orderSign\": \"string\",\n        \"getCount\": \"string\",\n        \"getCountUnit\": \"string\",\n        \"loseCount\": \"string\",\n        \"loseCountUnit\": \"string\",\n        \"price\": \"string\",\n        \"priceUnit\": \"string\",\n        \"fee\": \"string\",\n        \"feeUnit\": \"string\",\n        \"time\": 1263,\n        \"fsymbol\": \"string\",\n        \"side\": \"buy\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "35a5de87-32ce-4c59-9488-03b80a0d1eac",
+          "name": "Query my trades",
+          "request": {
+            "name": "Query my trades",
+            "description": {
+              "content": "Returns recent personal trade history for a symbol.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "myTrades"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"symbol\": \"<string>\",\n  \"startTime\": \"<long>\",\n  \"limit\": \"<integer>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5a807e79-8d44-4634-a613-c39404f4fa07",
+              "name": "Personal trade history",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "myTrades"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"symbol\": \"<string>\",\n  \"startTime\": \"<long>\",\n  \"limit\": \"<integer>\",\n  \"apiKey\": \"<string>\",\n  \"timestamp\": \"<long>\",\n  \"signature\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 7648,\n  \"data\": [\n    {\n      \"id\": 2050,\n      \"price\": 3616.3938182901543,\n      \"amount\": 9356.005612780205,\n      \"side\": \"sell\",\n      \"direction\": \"taker\",\n      \"time\": 7690\n    },\n    {\n      \"id\": 4943,\n      \"price\": 6199.218336870597,\n      \"amount\": 9607.036232107508,\n      \"side\": \"buy\",\n      \"direction\": \"maker\",\n      \"time\": 1530\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://global-openapi.bithumb.pro/openapi/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b67c1a18-3c61-485e-9a97-e58a9ba3bb75",
+    "name": "Bithumb Global REST Account Spot Trading API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Bithumb Global (bithumb.pro), South Korea's leading cryptocurrency exchange. Provides public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations across 396+ cryptocurrencies.\n\n\nContact Support:\n Name: Bithumb Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bithumb Global REST Account Market Data API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Market Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get spot ticker",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/ticker",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Trading pair symbol (e.g. ETH-USDT). Use \"ALL\" to get all tickers."
+              }
+            ]
+          },
+          "docs": "Returns 24-hour ticker data for a symbol or all symbols."
+        },
+        {
+          "info": {
+            "name": "Get order book",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/orderBook",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Trading pair symbol (e.g. ETH-USDT)"
+              }
+            ]
+          },
+          "docs": "Returns the current order book (bids and asks) for a symbol."
+        },
+        {
+          "info": {
+            "name": "Get recent trades",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/trades",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the last 100 trades for a symbol."
+        },
+        {
+          "info": {
+            "name": "Get candlestick data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/kline",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Kline interval: m1, m3, m5, m15, m30, h1, h2, h4, h6, h8, h12, d1, d3, w1, M1"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Start time in Unix seconds"
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "End time in Unix seconds"
+              }
+            ]
+          },
+          "docs": "Returns OHLCV candlestick (kline) data for a symbol."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

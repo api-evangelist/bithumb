@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bithumb Global REST Account API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query spot asset account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/spot/assetList",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apiKey",
+              "value": "{{apiKey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Returns spot asset balances."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

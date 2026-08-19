@@ -1,0 +1,398 @@
+{
+  "item": [
+    {
+      "id": "5f0dae21-237b-4c07-8016-1e058ec89de6",
+      "name": "Market Data",
+      "description": {
+        "content": "Public spot market data endpoints",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cdc70db3-e437-4bbe-8283-544ab0cd99f3",
+          "name": "Get spot ticker",
+          "request": {
+            "name": "Get spot ticker",
+            "description": {
+              "content": "Returns 24-hour ticker data for a symbol or all symbols.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "ticker"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) Trading pair symbol (e.g. ETH-USDT). Use \"ALL\" to get all tickers."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6c3c6ad2-2dd4-4c88-a8a6-4b4b99a7b56e",
+              "name": "Ticker data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "ticker"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "BTC-USDT"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 6040,\n  \"data\": [\n    {\n      \"c\": \"string\",\n      \"h\": \"string\",\n      \"l\": \"string\",\n      \"p\": \"string\",\n      \"v\": \"string\",\n      \"s\": \"string\"\n    },\n    {\n      \"c\": \"string\",\n      \"h\": \"string\",\n      \"l\": \"string\",\n      \"p\": \"string\",\n      \"v\": \"string\",\n      \"s\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca63986f-50a9-425f-b1a9-758118745cb6",
+          "name": "Get order book",
+          "request": {
+            "name": "Get order book",
+            "description": {
+              "content": "Returns the current order book (bids and asks) for a symbol.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "orderBook"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) Trading pair symbol (e.g. ETH-USDT)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88fa72fb-5403-4d9b-b3d9-4d4607c1b647",
+              "name": "Order book",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "orderBook"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "ETH-USDT"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 2116,\n  \"data\": {\n    \"b\": [\n      [\n        \"string\",\n        \"string\"\n      ],\n      [\n        \"string\",\n        \"string\"\n      ]\n    ],\n    \"s\": [\n      [\n        \"string\",\n        \"string\"\n      ],\n      [\n        \"string\",\n        \"string\"\n      ]\n    ],\n    \"ver\": \"string\",\n    \"symbol\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7aef6ecc-9488-4c09-987b-55ab28295a45",
+          "name": "Get recent trades",
+          "request": {
+            "name": "Get recent trades",
+            "description": {
+              "content": "Returns the last 100 trades for a symbol.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "trades"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0fb25ff3-04fe-458f-8317-f6407548f0b6",
+              "name": "Recent trade records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "trades"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "BTC-USDT"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 779,\n  \"data\": [\n    {\n      \"p\": \"string\",\n      \"s\": \"string\",\n      \"v\": \"string\",\n      \"t\": \"string\"\n    },\n    {\n      \"p\": \"string\",\n      \"s\": \"string\",\n      \"v\": \"string\",\n      \"t\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55bf0c7e-50d1-4c25-b453-230b86c4d147",
+          "name": "Get candlestick data",
+          "request": {
+            "name": "Get candlestick data",
+            "description": {
+              "content": "Returns OHLCV candlestick (kline) data for a symbol.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "kline"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "(Required) Kline interval: m1, m3, m5, m15, m30, h1, h2, h4, h6, h8, h12, d1, d3, w1, M1"
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<long>",
+                  "description": "(Required) Start time in Unix seconds"
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<long>",
+                  "description": "(Required) End time in Unix seconds"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c1f3dc61-706c-4d04-b81f-85284363fe3f",
+              "name": "Kline data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "kline"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "symbol",
+                      "value": "BTC-USDT"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 7401,\n  \"data\": [\n    {\n      \"c\": \"string\",\n      \"h\": \"string\",\n      \"l\": \"string\",\n      \"o\": \"string\",\n      \"s\": \"string\",\n      \"t\": \"string\",\n      \"time\": \"string\",\n      \"v\": \"string\"\n    },\n    {\n      \"c\": \"string\",\n      \"h\": \"string\",\n      \"l\": \"string\",\n      \"o\": \"string\",\n      \"s\": \"string\",\n      \"t\": \"string\",\n      \"time\": \"string\",\n      \"v\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://global-openapi.bithumb.pro/openapi/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1ef7e61f-9ce2-4984-acd8-019f82953693",
+    "name": "Bithumb Global REST Account Market Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Bithumb Global (bithumb.pro), South Korea's leading cryptocurrency exchange. Provides public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations across 396+ cryptocurrencies.\n\n\nContact Support:\n Name: Bithumb Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

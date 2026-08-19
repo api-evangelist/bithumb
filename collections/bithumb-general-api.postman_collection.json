@@ -1,0 +1,174 @@
+{
+  "item": [
+    {
+      "id": "52cf219b-9424-47ea-9b74-d95a14d0b326",
+      "name": "General",
+      "description": {
+        "content": "Server time and configuration",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b6f8f51b-ccaa-423d-9b41-b5750a315011",
+          "name": "Query server time",
+          "request": {
+            "name": "Query server time",
+            "description": {
+              "content": "Returns the current server timestamp in milliseconds.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "serverTime"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6af8e42-d60f-4bdc-8bef-bd7504b16293",
+              "name": "Server timestamp",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serverTime"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 1764,\n  \"data\": 1557134972000\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d8b5f5d-6367-437b-83bf-10c7a97e8ff5",
+          "name": "Get exchange configuration",
+          "request": {
+            "name": "Get exchange configuration",
+            "description": {
+              "content": "Returns spot, coin, and contract configuration details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "spot",
+                "config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5098a31-43f6-482f-a7d9-04b50ac43b79",
+              "name": "Exchange configuration",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "spot",
+                    "config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0\",\n  \"msg\": \"success\",\n  \"timestamp\": 7945,\n  \"data\": {\n    \"coinConfig\": [\n      {\n        \"name\": \"string\",\n        \"fullName\": \"string\",\n        \"depositStatus\": \"string\",\n        \"withdrawStatus\": \"string\",\n        \"minWithdraw\": \"string\",\n        \"withdrawFee\": \"string\",\n        \"makerFeeRate\": \"string\",\n        \"takerFeeRate\": \"string\",\n        \"minTxAmt\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"fullName\": \"string\",\n        \"depositStatus\": \"string\",\n        \"withdrawStatus\": \"string\",\n        \"minWithdraw\": \"string\",\n        \"withdrawFee\": \"string\",\n        \"makerFeeRate\": \"string\",\n        \"takerFeeRate\": \"string\",\n        \"minTxAmt\": \"string\"\n      }\n    ],\n    \"spotConfig\": [\n      {\n        \"symbol\": \"string\",\n        \"accuracy\": [\n          \"string\",\n          \"string\"\n        ],\n        \"percentPrice\": {\n          \"multiplierDown\": \"string\",\n          \"multiplierUp\": \"string\"\n        }\n      },\n      {\n        \"symbol\": \"string\",\n        \"accuracy\": [\n          \"string\",\n          \"string\"\n        ],\n        \"percentPrice\": {\n          \"multiplierDown\": \"string\",\n          \"multiplierUp\": \"string\"\n        }\n      }\n    ],\n    \"contractConfig\": [\n      {\n        \"symbol\": \"string\",\n        \"makerFeeRate\": \"string\",\n        \"takerFeeRate\": \"string\"\n      },\n      {\n        \"symbol\": \"string\",\n        \"makerFeeRate\": \"string\",\n        \"takerFeeRate\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://global-openapi.bithumb.pro/openapi/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "37e4a647-1622-4958-81a2-afdc3b79a995",
+    "name": "Bithumb Global REST Account General API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Bithumb Global (bithumb.pro), South Korea's leading cryptocurrency exchange. Provides public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations across 396+ cryptocurrencies.\n\n\nContact Support:\n Name: Bithumb Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

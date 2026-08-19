@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bithumb Global REST Account Wallet API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Wallet",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query deposit history",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/wallet/depositHistory",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apiKey",
+              "value": "{{apiKey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Returns deposit history for an account."
+        },
+        {
+          "info": {
+            "name": "Query withdrawal history",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/wallet/withdrawHistory",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apiKey",
+              "value": "{{apiKey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Returns withdrawal history for an account."
+        },
+        {
+          "info": {
+            "name": "Submit a withdrawal",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://global-openapi.bithumb.pro/openapi/v1/withdraw",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "apiKey",
+              "value": "{{apiKey}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Initiates a cryptocurrency withdrawal. Requires withdrawal authentication."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
