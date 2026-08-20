@@ -81,7 +81,8 @@ apis:
   description: Server time and configuration
   humanURL: https://apidocs.bithumb.com
   baseURL: https://api.bithumb.com
-  tags:
+  tags: []
+  tags_raw:
   - General
   properties:
   - type: OpenAPI
@@ -148,6 +149,8 @@ apis:
   humanURL: https://apidocs.bithumb.com
   baseURL: https://api.bithumb.com
   tags:
+  - Wallets
+  tags_raw:
   - Wallet
   properties:
   - type: OpenAPI
