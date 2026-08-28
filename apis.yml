@@ -1,5 +1,18 @@
 name: Bithumb
 description: Bithumb is South Korea's leading cryptocurrency exchange platform offering REST and WebSocket APIs for spot trading across KRW, BTC, and USDT markets. The APIs cover market data, order management, account management, deposit and withdrawal operations, and real-time streaming for 396+ cryptocurrencies.
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: true
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  - pricing
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
