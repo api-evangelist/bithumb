@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Bithumb Global REST Account Market Data API
-  description: 'REST API for Bithumb Global (bithumb.pro), South Korea''s leading cryptocurrency exchange. Provides public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations across 396+ cryptocurrencies.
-
-    '
+  title: Bithumb Global REST Market Data API
+  description: REST API for Bithumb Global (bithumb.pro), South Korea's leading cryptocurrency exchange. Provides public market data and authenticated private endpoints for spot trading, account management, and deposit/withdrawal operations across 396+ cryptocurrencies.
   version: 1.0.0
   contact:
     name: Bithumb Developer Support
@@ -166,43 +164,6 @@ paths:
                         $ref: '#/components/schemas/KlineRecord'
 components:
   schemas:
-    OrderBookData:
-      type: object
-      properties:
-        b:
-          type: array
-          description: Bids [price, quantity]
-          items:
-            type: array
-            items:
-              type: string
-        s:
-          type: array
-          description: Asks [price, quantity]
-          items:
-            type: array
-            items:
-              type: string
-        ver:
-          type: string
-          description: Version number
-        symbol:
-          type: string
-    BaseResponse:
-      type: object
-      properties:
-        code:
-          type: string
-          example: '0'
-        msg:
-          type: string
-          example: success
-        timestamp:
-          type: integer
-          format: int64
-        params:
-          type: array
-          items: {}
     KlineRecord:
       type: object
       properties:
@@ -251,6 +212,21 @@ components:
         s:
           type: string
           description: Symbol
+    BaseResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0'
+        msg:
+          type: string
+          example: success
+        timestamp:
+          type: integer
+          format: int64
+        params:
+          type: array
+          items: {}
     TradeRecord:
       type: object
       properties:
@@ -266,6 +242,28 @@ components:
         t:
           type: string
           description: Timestamp (Unix seconds)
+    OrderBookData:
+      type: object
+      properties:
+        b:
+          type: array
+          description: Bids [price, quantity]
+          items:
+            type: array
+            items:
+              type: string
+        s:
+          type: array
+          description: Asks [price, quantity]
+          items:
+            type: array
+            items:
+              type: string
+        ver:
+          type: string
+          description: Version number
+        symbol:
+          type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

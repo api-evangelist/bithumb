@@ -1,11 +1,7 @@
 {
   "provider": "bithumb",
   "sources": [
-    "bithumb-account-api-openapi.yml",
-    "bithumb-general-api-openapi.yml",
-    "bithumb-market-data-api-openapi.yml",
-    "bithumb-spot-trading-api-openapi.yml",
-    "bithumb-wallet-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
     "bithumb-account-api-openapi.yml",
@@ -17,6 +13,16 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "bithumb-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bithumb-general-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bithumb-market-data-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bithumb-spot-trading-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bithumb-wallet-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
