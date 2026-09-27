@@ -164,6 +164,49 @@ paths:
                         $ref: '#/components/schemas/KlineRecord'
 components:
   schemas:
+    TickerData:
+      type: object
+      properties:
+        c:
+          type: string
+          description: Last price in the past 24 hours
+        h:
+          type: string
+          description: High price in the past 24 hours
+        l:
+          type: string
+          description: Low price in the past 24 hours
+        p:
+          type: string
+          description: Price change in the past 24 hours
+        v:
+          type: string
+          description: Deal quantity in the past 24 hours
+        s:
+          type: string
+          description: Symbol
+    OrderBookData:
+      type: object
+      properties:
+        b:
+          type: array
+          description: Bids [price, quantity]
+          items:
+            type: array
+            items:
+              type: string
+        s:
+          type: array
+          description: Asks [price, quantity]
+          items:
+            type: array
+            items:
+              type: string
+        ver:
+          type: string
+          description: Version number
+        symbol:
+          type: string
     KlineRecord:
       type: object
       properties:
@@ -191,27 +234,6 @@ components:
         v:
           type: string
           description: Total deal quantity
-    TickerData:
-      type: object
-      properties:
-        c:
-          type: string
-          description: Last price in the past 24 hours
-        h:
-          type: string
-          description: High price in the past 24 hours
-        l:
-          type: string
-          description: Low price in the past 24 hours
-        p:
-          type: string
-          description: Price change in the past 24 hours
-        v:
-          type: string
-          description: Deal quantity in the past 24 hours
-        s:
-          type: string
-          description: Symbol
     BaseResponse:
       type: object
       properties:
@@ -242,28 +264,6 @@ components:
         t:
           type: string
           description: Timestamp (Unix seconds)
-    OrderBookData:
-      type: object
-      properties:
-        b:
-          type: array
-          description: Bids [price, quantity]
-          items:
-            type: array
-            items:
-              type: string
-        s:
-          type: array
-          description: Asks [price, quantity]
-          items:
-            type: array
-            items:
-              type: string
-        ver:
-          type: string
-          description: Version number
-        symbol:
-          type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
