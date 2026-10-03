@@ -185,6 +185,21 @@ components:
         s:
           type: string
           description: Symbol
+    BaseResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0'
+        msg:
+          type: string
+          example: success
+        timestamp:
+          type: integer
+          format: int64
+        params:
+          type: array
+          items: {}
     OrderBookData:
       type: object
       properties:
@@ -207,6 +222,21 @@ components:
           description: Version number
         symbol:
           type: string
+    TradeRecord:
+      type: object
+      properties:
+        p:
+          type: string
+          description: Deal price
+        s:
+          type: string
+          description: Trade type (buy or sell)
+        v:
+          type: string
+          description: Deal quantity
+        t:
+          type: string
+          description: Timestamp (Unix seconds)
     KlineRecord:
       type: object
       properties:
@@ -234,36 +264,6 @@ components:
         v:
           type: string
           description: Total deal quantity
-    BaseResponse:
-      type: object
-      properties:
-        code:
-          type: string
-          example: '0'
-        msg:
-          type: string
-          example: success
-        timestamp:
-          type: integer
-          format: int64
-        params:
-          type: array
-          items: {}
-    TradeRecord:
-      type: object
-      properties:
-        p:
-          type: string
-          description: Deal price
-        s:
-          type: string
-          description: Trade type (buy or sell)
-        v:
-          type: string
-          description: Deal quantity
-        t:
-          type: string
-          description: Timestamp (Unix seconds)
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
