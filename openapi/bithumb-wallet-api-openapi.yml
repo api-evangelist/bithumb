@@ -196,21 +196,6 @@ components:
           description: 0=inner transfer, 1=wallet withdrawal
         fee:
           type: string
-    BaseResponse:
-      type: object
-      properties:
-        code:
-          type: string
-          example: '0'
-        msg:
-          type: string
-          example: success
-        timestamp:
-          type: integer
-          format: int64
-        params:
-          type: array
-          items: {}
     DepositRecord:
       type: object
       properties:
@@ -232,6 +217,21 @@ components:
           type: string
         acountName:
           type: string
+    BaseResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0'
+        msg:
+          type: string
+          example: success
+        timestamp:
+          type: integer
+          format: int64
+        params:
+          type: array
+          items: {}
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

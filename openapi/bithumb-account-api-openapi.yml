@@ -62,21 +62,6 @@ paths:
                         $ref: '#/components/schemas/AssetRecord'
 components:
   schemas:
-    BaseResponse:
-      type: object
-      properties:
-        code:
-          type: string
-          example: '0'
-        msg:
-          type: string
-          example: success
-        timestamp:
-          type: integer
-          format: int64
-        params:
-          type: array
-          items: {}
     AssetRecord:
       type: object
       properties:
@@ -94,6 +79,21 @@ components:
         type:
           type: string
           description: 1=virtual coin, 2=legal currency
+    BaseResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0'
+        msg:
+          type: string
+          example: success
+        timestamp:
+          type: integer
+          format: int64
+        params:
+          type: array
+          items: {}
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

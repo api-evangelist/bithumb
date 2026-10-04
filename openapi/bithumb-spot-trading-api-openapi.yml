@@ -538,21 +538,6 @@ paths:
                             format: int64
 components:
   schemas:
-    BaseResponse:
-      type: object
-      properties:
-        code:
-          type: string
-          example: '0'
-        msg:
-          type: string
-          example: success
-        timestamp:
-          type: integer
-          format: int64
-        params:
-          type: array
-          items: {}
     Order:
       type: object
       properties:
@@ -592,6 +577,21 @@ components:
           type: string
         tradeTotal:
           type: string
+    BaseResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0'
+        msg:
+          type: string
+          example: success
+        timestamp:
+          type: integer
+          format: int64
+        params:
+          type: array
+          items: {}
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

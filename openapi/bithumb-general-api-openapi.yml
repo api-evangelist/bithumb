@@ -69,30 +69,6 @@ paths:
                             $ref: '#/components/schemas/ContractConfig'
 components:
   schemas:
-    ContractConfig:
-      type: object
-      properties:
-        symbol:
-          type: string
-        makerFeeRate:
-          type: string
-        takerFeeRate:
-          type: string
-    BaseResponse:
-      type: object
-      properties:
-        code:
-          type: string
-          example: '0'
-        msg:
-          type: string
-          example: success
-        timestamp:
-          type: integer
-          format: int64
-        params:
-          type: array
-          items: {}
     CoinConfig:
       type: object
       properties:
@@ -134,6 +110,30 @@ components:
               type: string
             multiplierUp:
               type: string
+    BaseResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0'
+        msg:
+          type: string
+          example: success
+        timestamp:
+          type: integer
+          format: int64
+        params:
+          type: array
+          items: {}
+    ContractConfig:
+      type: object
+      properties:
+        symbol:
+          type: string
+        makerFeeRate:
+          type: string
+        takerFeeRate:
+          type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
