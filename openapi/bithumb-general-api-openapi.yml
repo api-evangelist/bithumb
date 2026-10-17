@@ -69,6 +69,22 @@ paths:
                             $ref: '#/components/schemas/ContractConfig'
 components:
   schemas:
+    SpotConfig:
+      type: object
+      properties:
+        symbol:
+          type: string
+        accuracy:
+          type: array
+          items:
+            type: string
+        percentPrice:
+          type: object
+          properties:
+            multiplierDown:
+              type: string
+            multiplierUp:
+              type: string
     CoinConfig:
       type: object
       properties:
@@ -94,22 +110,6 @@ components:
           type: string
         minTxAmt:
           type: string
-    SpotConfig:
-      type: object
-      properties:
-        symbol:
-          type: string
-        accuracy:
-          type: array
-          items:
-            type: string
-        percentPrice:
-          type: object
-          properties:
-            multiplierDown:
-              type: string
-            multiplierUp:
-              type: string
     BaseResponse:
       type: object
       properties:

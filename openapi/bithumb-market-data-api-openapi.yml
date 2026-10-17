@@ -164,6 +164,21 @@ paths:
                         $ref: '#/components/schemas/KlineRecord'
 components:
   schemas:
+    BaseResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0'
+        msg:
+          type: string
+          example: success
+        timestamp:
+          type: integer
+          format: int64
+        params:
+          type: array
+          items: {}
     OrderBookData:
       type: object
       properties:
@@ -213,21 +228,6 @@ components:
         v:
           type: string
           description: Total deal quantity
-    BaseResponse:
-      type: object
-      properties:
-        code:
-          type: string
-          example: '0'
-        msg:
-          type: string
-          example: success
-        timestamp:
-          type: integer
-          format: int64
-        params:
-          type: array
-          items: {}
     TradeRecord:
       type: object
       properties:
