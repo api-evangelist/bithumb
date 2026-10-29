@@ -64,48 +64,148 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Bithumb is South Korea's leading cryptocurrency exchange platform (No.1 가상자산 플랫폼), offering REST and WebSocket APIs for spot trading across KRW, BTC, and USDT markets. The platform supports 396+ cryptocurrencies with endpoints covering market data, order management, account management, deposit and withdrawal operations, and real-time streaming.
+Bithumb is South Korea's leading cryptocurrency exchange platform offering REST and WebSocket APIs for spot trading across KRW, BTC, and USDT markets. The APIs cover market data, order management, account management, deposit and withdrawal operations, and real-time streaming for 396+ cryptocurrencies.
 
-## APIs
+**Areas:** Cryptocurrency · Exchange · Trading · South Korea · KRW · Bitcoin · Market Data · WebSocket
 
-- **REST API** - Public market data and authenticated private endpoints for trading and account operations
-- **WebSocket API** - Real-time streaming for tickers, order books, trade executions, and personal order updates
+## Bithumb on APIs.io
 
-## Key Features
+Everything profiled for Bithumb is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bithumb/](https://apis.io/providers/bithumb/)** — or go straight to one of the APIs or properties below.
 
-- Spot trading in KRW (Korean Won), BTC, and USDT base markets
-- 396+ cryptocurrency trading pairs
-- Public endpoints: ticker, orderbook, trade history, candlestick data (minute/hour/day/week/month)
-- Private endpoints: order placement/cancellation, account balances, deposit/withdrawal management
-- Bulk order operations (up to 20 orders) and bulk cancellation (up to 30 orders)
-- TWAP (Time-Weighted Average Price) order support
-- JWT-based authentication for private endpoints
-- Real-time WebSocket streaming with heartbeat support
-- Travel Rule compliance for cryptocurrency withdrawals
-- Investment alert system
+### APIs (6)
 
-## Authentication
+- [Bithumb WebSocket API](https://apis.io/apis/bithumb/bithumb-websocket-api/) — Real-time WebSocket API for streaming market data including tickers, order books, and trade executions, as well as authenticated streams for personal order…
+- [Bithumb Account API](https://apis.io/apis/bithumb/bithumb-account-api/) — Asset account management
+- [Bithumb General API](https://apis.io/apis/bithumb/bithumb-general-api/) — Server time and configuration
+- [Bithumb Market Data API](https://apis.io/apis/bithumb/bithumb-market-data-api/) — Public spot market data endpoints
+- [Bithumb Spot Trading API](https://apis.io/apis/bithumb/bithumb-spot-trading-api/) — Authenticated spot order management
+- [Bithumb Wallet API](https://apis.io/apis/bithumb/bithumb-wallet-api/) — Deposit and withdrawal history
 
-Public endpoints require no authentication. Private endpoints require JWT authentication tokens generated via the Bithumb developer portal.
+### Published properties
 
-## Rate Limits
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- Order creation/cancellation: 10 requests per second per API key
-- Public market data: Per-IP limits enforced (specific values managed by operations)
+#### Agentic access (1)
 
-## Fees
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Maker fee: 0.04%
-- Taker fee: 0.25%
-- Six-tier membership discount system based on 30-day trading volume
-- KRW withdrawal: 1,000 KRW flat fee
-- BTC withdrawal: 0.001 BTC
-- Deposits: Free
+- [Bithumb Agentic Access](https://apis.io/agentic-access/bithumb/bithumb-agentic-access/)
 
-## Links
+#### JSON Schema (2)
 
-- [Developer Portal](https://apidocs.bithumb.com)
+The data models the API reads and writes.
+
+- [Bithumb Spot Order](https://apis.io/schemas/bithumb/order/)
+- [Bithumb Spot Ticker](https://apis.io/schemas/bithumb/ticker/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Get Orderbook](https://apis.io/examples/bithumb/get-orderbook/)
+- [Get Ticker](https://apis.io/examples/bithumb/get-ticker/)
+- [Place Order](https://apis.io/examples/bithumb/place-order/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Bithumb Global REST Account API](https://apis.io/collections/bithumb/open-bithumb-account-api/)
+- [Bithumb Global REST Account General API](https://apis.io/collections/bithumb/open-bithumb-general-api/)
+- [Bithumb Global REST Account Market Data API](https://apis.io/collections/bithumb/open-bithumb-market-data-api/)
+- [Bithumb Global REST Account Spot Trading API](https://apis.io/collections/bithumb/open-bithumb-spot-trading-api/)
+- [Bithumb Global REST Account Wallet API](https://apis.io/collections/bithumb/open-bithumb-wallet-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Bithumb — jsonschema rules](https://apis.io/rules/bithumb/bithumb-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Bithumb Authentication](https://apis.io/security/bithumb/bithumb-authentication/)
+- [Bithumb Domain Security](https://apis.io/security/bithumb/bithumb-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Plans](https://apis.io/plans/bithumb/plans/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Rate Limits](https://apis.io/rate-limits/bithumb/rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Finops](https://apis.io/finops/bithumb/finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.bithumb.com)
 - [Documentation](https://apidocs.bithumb.com/docs)
+- [Support](https://www.bithumb.com/u1/US139)
 - [Changelog](https://apidocs.bithumb.com/changelog)
-- [GitHub (Bithumb Pro API Docs)](https://github.com/bithumb-pro/bithumb.pro-official-api-docs)
-- [Main Website](https://www.bithumb.com)
+- [Blog](https://rss.blog.naver.com/bithumb_official.xml)
+
+## API Evangelist rating
+
+**Kin Score 26.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 43.3 |
+| Contract governance | 9.8 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 20.2 |
+| Access clarity | 10.5 |
+
+**Agent readiness 24.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 18.5** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bithumb/](https://apis.io/providers/bithumb/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Bithumb: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bithumb/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
